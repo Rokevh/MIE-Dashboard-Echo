@@ -50,7 +50,7 @@ def generate_data_for_tiles():
         "total_items": db_mod.get_total_number_items(),
         "avg_act_cost": None,
         "top_px_item": None,
-        "num_unique_items": None
+        "num_unique_items": db_mod.get_unique_item_count()
     }
     return tile_data
 

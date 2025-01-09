@@ -26,6 +26,12 @@ class Database:
     def get_total_number_items(self):
         """Return the total number of prescribed items."""
         return int(db.session.execute(db.select(func.sum(PrescribingData.items))).first()[0])
+    
+    def get_unique_item_count(self):
+        result = len(db.session.execute(db.select(PrescribingData.BNF_code).distinct()).all())
+        print (result)
+        return result
+                
             
     def get_prescribed_items_per_pct(self):
         """Return the total items per PCT."""
