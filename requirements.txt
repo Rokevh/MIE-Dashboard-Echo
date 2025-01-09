@@ -240,7 +240,7 @@ parso @ file:///opt/conda/conda-bld/parso_1641458642106/work
 partd @ file:///opt/conda/conda-bld/partd_1647245470509/work
 path @ file:///opt/conda/conda-bld/path_1641578212155/work
 pathlib @ file:///Users/ktietz/demo/mc3/conda-bld/pathlib_1629713961906/work
-pathlib2 @ file:///C:/ci/pathlib2_1625585790401/work
+pathlib2 @ file:///C:/ci/pathlibF2_1625585790401/work
 pathspec @ file:///C:/Windows/TEMP/abs_581d0u45mh/croots/recipe/pathspec_1659627132171/work
 patsy==0.5.2
 pdfminer.six==20201018

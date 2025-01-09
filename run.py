@@ -12,3 +12,4 @@ DESCRIPTION:   File that runs the Flask application (local hosting). To run the 
 
 from app import app
 app.run()
+
