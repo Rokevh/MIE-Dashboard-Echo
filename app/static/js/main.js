@@ -13,4 +13,5 @@ var popup = null;
 function initializeMain()
 {
     popup = Popup();
+
 }
