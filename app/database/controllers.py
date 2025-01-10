@@ -25,23 +25,24 @@ class Database:
     
     def get_total_number_items(self):
         """Return the total number of prescribed items."""
-        return int(db.session.execute(db.select(func.sum(PrescribingData.items))).first()[0])
+        result = int(db.session.execute(db.select(func.sum(PrescribingData.items))).first()[0])
+        return f'{result:,}'
     
     def get_unique_item_count(self):
         result = len(db.session.execute(db.select(PrescribingData.BNF_code).distinct()).all())
-        return result
+        return f'{result:,}'
     
     def get_average_ACT_Cost(self):
         """Return the average number of ACT cost."""
         avg_act_cost = float(db.session.execute(db.select(func.avg(PrescribingData.ACT_cost))).first()[0]) 
         result = round(avg_act_cost,2)
-        return result
+        return f'{result:,}'
     
     def get_total_GP_number(self):
         '''Use practice dt to find the number of unique gp practices'''
         result = len(db.session.execute(db.select(PracticeData.practice_code).distinct()).all())
         print(result)
-        return result
+        return f'{result:,}'
             
     def get_prescribed_items_per_pct(self):
         """Return the total items per PCT."""
