@@ -22,8 +22,26 @@ Step 1: Create a new repository from the project skeleton
 Step 2: Manage access to the collaborators
 Step 3: Create a new folder/directory for the project
 Step 4: Git clone
-# cd <pathway-of-the-new-folder>
-# git init
-# git clone 
+#cd <pathway-of-the-new-folder>
+#git init
+#git clone https://github.com/Rokevh/MIE-Dashboard-Echo.git
+
+Git Strategy:
+Step 1: Create a remote branch for each new feature
+Step 2: Create a local branch for the feature
+Step 3: Pull from remote to the local branch
+Step 4: Implement the changes and commit 
+Step 5: Push the local branch to the remote branch
+Step 6: Submit a Pull request for review
+Step 7: Merge with the Remote Master file
+
+Acknowledgments
+The UoM MIE team for the teaching and training.
+The MIE ECHO team for the collaboration.
+The previous development team for laying the groundwork.
+Open-source libraries used in the project.
+
+
+
 
   
