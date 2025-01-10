@@ -38,7 +38,7 @@ def home():
         "tile_data_items": generate_data_for_tiles(),  
         "top_items_plot_data": generate_top_px_items_barchart_data(),
         "pct_list": pcts,
-        "pct_data": selected_pct_data
+        "pct_data": selected_pct_data,
     }
     
     # render the HTML page passing in relevant data
@@ -50,7 +50,8 @@ def generate_data_for_tiles():
         "total_items": db_mod.get_total_number_items(),
         "avg_act_cost": db_mod.get_average_ACT_Cost(),
         "top_px_item": None,
-        "num_unique_items": db_mod.get_unique_item_count()
+        "num_unique_items": db_mod.get_unique_item_count(),
+        "total_unique_gps": db_mod.get_total_GP_number(),
     }
     return tile_data
 
