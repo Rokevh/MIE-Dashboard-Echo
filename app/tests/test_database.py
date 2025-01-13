@@ -9,6 +9,7 @@ DESCRIPTION:   Suite of tests for testing the dashboards database
 """
 
 import unittest
+from sqlalchemy.sql import func
 from app import app
 from app.database.controllers import Database
 
@@ -29,8 +30,11 @@ class DatabaseTests(unittest.TestCase):
 
     def test_get_average_ACT_Cost(self):
         with app.app_context():
+            """Define the min and max ACT costs using SQLAlchemy"""
+            ACT_min = 0
+            ACT_max = 100
             """Test that the average ACT cost is between the min/max costs"""
-            None
+            self.assertTrue(ACT_min <= self.db_mod.get_average_ACT_Cost() <= ACT_max)
 
     def test_get_unique_item_count(self):
         with app.app_context():

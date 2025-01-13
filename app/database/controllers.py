@@ -41,7 +41,6 @@ class Database:
     def get_total_GP_number(self):
         '''Use practice dt to find the number of unique gp practices'''
         result = len(db.session.execute(db.select(PracticeData.practice_code).distinct()).all())
-        print(result)
         return result
             
     def get_prescribed_items_per_pct(self):
