@@ -10,8 +10,9 @@ DESCRIPTION:   Suite of tests for testing the dashboards database
 
 import unittest
 from sqlalchemy.sql import func
-from app import app
+from app import app, db
 from app.database.controllers import Database
+from app.database.controllers import PrescribingData, PracticeData
 
 class DatabaseTests(unittest.TestCase):
     """Class for testing database functionality and connection."""
@@ -31,8 +32,8 @@ class DatabaseTests(unittest.TestCase):
     def test_get_average_ACT_Cost(self):
         with app.app_context():
             """Define the min and max ACT costs using SQLAlchemy"""
-            ACT_min = 0
-            ACT_max = 100
+            ACT_min = int(db.session.execute(db.select(func.min(PrescribingData.items))).first()[0])
+            ACT_max = int(db.session.execute(db.select(func.max(PrescribingData.items))).first()[0])
             """Test that the average ACT cost is between the min/max costs"""
             self.assertTrue(ACT_min <= self.db_mod.get_average_ACT_Cost() <= ACT_max)
 
