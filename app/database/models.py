@@ -14,8 +14,8 @@ class PrescribingData(db.Model):
     __tablename__ = 'practice_level_prescribing'
     id = db.Column(db.Integer, primary_key=True)
     SHA = db.Column(db.String(3))
-    PCT = db.Column(db.String(3))
-    practice = db.Column(db.String(6))
+    PCT = db.Column("PCT",db.String(3))
+    practice = db.Column("PRACTICE", db.String(6))
     BNF_code = db.Column("BNFCODE", db.String(15))
     BNF_name = db.Column("BNFNAME", db.String(40))
     items = db.Column(db.Integer)
@@ -30,8 +30,8 @@ class PracticeData(db.Model):
     practice_name = db.Column(db.Text)
     address_line_1 = db.Column(db.Text)
     address_line_2 = db.Column(db.Text)
+    area = db.Column("AREA", db.String(40))
     city = db.Column(db.Text)
-    county = db.Column(db.Text)
     post_code = db.Column(db.String(10))
 
 
