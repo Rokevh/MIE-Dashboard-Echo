@@ -52,6 +52,8 @@ def generate_data_for_tiles():
         "top_px_item": None,
         "num_unique_items": db_mod.get_unique_item_count(),
         "total_unique_gps": db_mod.get_total_GP_number(),
+        "total_unique_areas": db_mod.get_unique_area_number(),
+        "pct_most_gps": db_mod.get_PCT_contains_most_GPs()
     }
     return tile_data
 

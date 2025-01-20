@@ -43,6 +43,24 @@ class Database:
         result = len(db.session.execute(db.select(PracticeData.practice_code).distinct()).all())
         print(result)
         return f'{result:,}'
+    
+    def get_unique_area_number(self):
+        '''Return the number of unique areas number'''
+        result = len(db.session.execute(db.select(PracticeData.area).distinct()).all())
+        print(result)
+        return f'{result:,}'
+    
+    def get_PCT_contains_most_GPs(self):
+        '''Return the the PCT that contains the most GP practices.'''
+        result =(db.session.execute(db.select(PrescribingData.PCT, func.count(PrescribingData.practice))
+                                        .group_by(PrescribingData.PCT)
+                                        .order_by(func.count(PrescribingData.practice).desc())
+                                        .limit(1)).first())
+        pct, practice_count = result
+        formatted_result = f"PCT: {pct}\nPractices Count: {practice_count:,}"
+        print(formatted_result)
+        return formatted_result
+
             
     def get_prescribed_items_per_pct(self):
         """Return the total items per PCT."""
